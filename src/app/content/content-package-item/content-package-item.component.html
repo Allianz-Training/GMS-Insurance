@@ -1,0 +1,14 @@
+<div
+  class="package-item"
+  [class.pack-a]="package.name == 'A'"
+  [class.pack-b]="package.name == 'B'"
+  [class.pack-c]="package.name == 'C'"
+>
+  <div class="package-head">{{ package.name }}</div>
+  <div>Price : {{ package.price | number: "1.0":"en-US" }}฿/Year</div>
+  <hr />
+  <ul style="font-size: 12px">
+    <li *ngFor="let b of package.benefits">{{ b }}</li>
+  </ul>
+  <div class="btn btn-dark" [routerLink]="[linkToDetail]">Choose</div>
+</div>

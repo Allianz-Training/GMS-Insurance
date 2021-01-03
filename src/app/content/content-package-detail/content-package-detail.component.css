@@ -1,0 +1,30 @@
+.package-item {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: rgb(190, 190, 190);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  min-height: 70vh;
+  grid-gap: 10px;
+}
+
+.pack-a {
+  background-color: rgb(255, 177, 177);
+}
+.pack-b {
+  background-color: rgb(189, 255, 189);
+}
+.pack-c {
+  background-color: rgb(177, 195, 255);
+}
+
+.detail-container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.half-space {
+  grid-gap: 20px;
+}

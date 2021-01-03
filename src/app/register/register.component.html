@@ -1,0 +1,145 @@
+<div class="blur-bg">&nbsp;</div>
+<div class="all-container">
+  <div class="content-box">
+    <div class="sub-content-box">
+      <div class="close-btn">
+        <i class="btn fas fa-times" (click)="closeClick()"></i>
+      </div>
+      <div class="form-container">
+        <form [formGroup]="form">
+          <h1 class="text-center">Register</h1>
+          <div class="row m-0">
+            <div class="form-text col-2" style="margin-top: 12px">
+              First Name
+            </div>
+            <input
+              type="text"
+              class="form-control col w-100"
+              formControlName="firstName"
+            />
+            <span
+              *ngIf="form.get('firstName').errors?.required"
+              class="form-text alert-text col-auto"
+            >
+              * Required
+            </span>
+          </div>
+          <div class="row m-0">
+            <div class="form-text col-2" style="margin-top: 12px">
+              Last Name
+            </div>
+            <input
+              type="text"
+              class="form-control col w-100"
+              formControlName="lastName"
+            />
+            <span
+              *ngIf="form.get('lastName').errors?.required"
+              class="form-text alert-text col-auto"
+            >
+              * Required
+            </span>
+          </div>
+          <div class="row m-0">
+            <div class="form-text col-2" style="margin-top: 12px">
+              Citizen ID
+            </div>
+            <input
+              type="text"
+              class="form-control col w-100"
+              formControlName="cid"
+              maxlength="13"
+            />
+            <span
+              *ngIf="form.get('cid').errors?.required"
+              class="form-text alert-text col-auto"
+            >
+              * Required
+            </span>
+            <span
+              *ngIf="form.get('cid').errors?.minlength"
+              class="form-text alert-text col-auto"
+            >
+              * 13 characters
+            </span>
+          </div>
+          <div class="row m-0">
+            <div class="form-text col-2" style="margin-top: 12px">Email</div>
+            <input
+              type="text"
+              class="form-control col w-100"
+              formControlName="email"
+            />
+            <span
+              *ngIf="form.get('email').errors?.email"
+              class="form-text col-auto alert-text"
+            >
+              * Invalid Email
+            </span>
+            <span
+              *ngIf="form.get('email').errors?.required"
+              class="form-text col-auto alert-text"
+            >
+              * Required
+            </span>
+          </div>
+          <div class="row m-0">
+            <div class="form-text col-2" style="margin-top: 12px">Password</div>
+            <input
+              type="password"
+              class="form-control w-100 col"
+              formControlName="password"
+              maxlength="24"
+            />
+            <span
+              *ngIf="form.get('password').errors?.minlength"
+              class="form-text alert-text col-auto"
+            >
+              * at least 8 characters
+            </span>
+            <span
+              *ngIf="form.get('password').errors?.required"
+              class="form-text alert-text col-auto"
+            >
+              * Required
+            </span>
+          </div>
+
+          <div class="row m-0">
+            <div class="form-text col-2" style="margin-top: 12px">
+              Telephone
+            </div>
+            <input
+              type="text"
+              class="form-control w-100 col"
+              formControlName="telephone"
+              maxlength="10"
+            />
+            <span
+              *ngIf="form.get('telephone').errors?.minlength"
+              class="form-text alert-text col-auto"
+            >
+              * 9,10 characters
+            </span>
+            <span
+              *ngIf="form.get('telephone').errors?.required"
+              class="form-text alert-text col-auto"
+            >
+              * Required
+            </span>
+          </div>
+          <div class="row m-0">
+            <button
+              type="submit"
+              class="btn btn-dark m-auto pl-5 pr-5"
+              [disabled]="!form.valid"
+              (click)="submitClick()"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

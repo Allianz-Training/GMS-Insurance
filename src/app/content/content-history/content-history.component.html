@@ -1,0 +1,7 @@
+<div>
+  <app-head-image [headTitle]="'History'"></app-head-image>
+  <app-package-history
+    *ngFor="let o of ownPackages"
+    [ownPackage]="o"
+  ></app-package-history>
+</div>

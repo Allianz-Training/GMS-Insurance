@@ -1,0 +1,21 @@
+.side-divider {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+}
+
+.side-left {
+  min-width: 150px;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.top-space {
+  height: 10vh;
+}

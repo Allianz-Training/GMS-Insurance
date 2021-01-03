@@ -1,0 +1,49 @@
+.space {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.half {
+  padding: 45px 0px 45px 20px;
+  margin: 20px;
+}
+
+.half13 {
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.box-border {
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.img-box {
+  /* background-color: black; */
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.imagePreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.alert-text {
+  color: red;
+}
+
+@media only screen and (max-width: 800px) {
+  .half {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .half {
+    padding: 20px;
+  }
+}

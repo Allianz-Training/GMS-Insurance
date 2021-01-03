@@ -1,0 +1,111 @@
+<div>
+  <app-head-image [headTitle]="'Claim Form'"></app-head-image>
+  <form [formGroup]="myForm">
+    <div class="half box-border mb-5">
+      <div class="space" id="left">
+        <div class="half13">
+          <div class="form-text">
+            Name
+            <span
+              *ngIf="myForm.get('name').errors?.required"
+              class="alert-text"
+            >
+              *
+            </span>
+          </div>
+          <input type="text" formControlName="name" class="form-control" />
+        </div>
+        <div class="half13">
+          <div class="form-text">
+            Delivery Company
+            <span
+              *ngIf="myForm.get('company').errors?.required"
+              class="alert-text"
+            >
+              *
+            </span>
+          </div>
+          <select class="form-control" id="company" formControlName="company">
+            <option disabled value="" selected>
+              ------- Please Select -------
+            </option>
+            <option value="Kerry" selected>Kerry</option>
+            <option value="J&T">J&T</option>
+            <option value="DHL">DHL</option>
+            <option value="ThaiPost">ThaiPost</option>
+          </select>
+        </div>
+        <div class="half13">
+          <div class="form-text">
+            Tracking Number<span
+              *ngIf="myForm.get('tracking').errors?.required"
+              class="alert-text"
+            >
+              *
+            </span>
+          </div>
+          <input type="text" formControlName="tracking" class="form-control" />
+        </div>
+        <div class="half13">
+          <div class="form-text">
+            Price<span
+              *ngIf="myForm.get('price').errors?.required"
+              class="alert-text"
+            >
+              *
+            </span>
+          </div>
+          <input type="text" formControlName="price" class="form-control" />
+        </div>
+        <div class="half13">
+          <div class="form-text">
+            Package<span
+              *ngIf="myForm.get('package').errors?.required"
+              class="alert-text"
+            >
+              *
+            </span>
+          </div>
+          <select class="form-control" id="package" formControlName="package">
+            <option disabled value="" selected>
+              ------- Please Select -------
+            </option>
+            <option *ngFor="let o of ownPackages" [value]="o['packageId']">
+              Package : {{ comparePackageType(o["typePackage"]).name }} ({{
+                o["amountLimit"] | number: "1.0":"en-US"
+              }})
+            </option>
+          </select>
+        </div>
+        <div class="halfPic">
+          <div>Claim Picture</div>
+          <input type="file" accept="image/*" (change)="showPreview($event)" />
+        </div>
+        <div>
+          <div *ngIf="!myForm.valid" style="color: red">
+            * Please fill all input fields
+          </div>
+          <button
+            type="submit"
+            class="btn btn-dark w-100"
+            [disabled]="!myForm.valid"
+            (click)="submitClick()"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+      <div class="img-box" #right>
+        <div class="imagePreview" *ngIf="imageURL && imageURL !== ''">
+          <img [src]="imageURL" [alt]="form.value.name" width="300" />
+        </div>
+        <div class="imagePreview" *ngIf="!imageURL">
+          <img src="'../../../../../assets/images/none-icon.png" width="300" />
+          <div style="color: rgb(185, 185, 185)">
+            Could not found any image to upload
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

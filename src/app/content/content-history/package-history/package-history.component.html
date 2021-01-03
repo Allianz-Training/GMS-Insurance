@@ -1,0 +1,31 @@
+<div
+  class="package"
+  [class.pack-a]="package.name == 'A'"
+  [class.pack-b]="package.name == 'B'"
+  [class.pack-c]="package.name == 'C'"
+>
+  <div class="auto-divide">
+    <div class="head">Package : {{ package.name }}</div>
+    <div style="font-size: 20px">
+      (Amount : {{ ownPackage["amountLimit"] | number: "1.0":"en-US" }}฿/{{
+        package.insuranceAmount | number: "1.0":"en-US"
+      }}฿)
+    </div>
+  </div>
+  <div class="package-detail">
+    <b>Detail : </b>
+    <span class="mr-2" *ngFor="let b of package.benefits; let i = index"
+      >{{ b }}<span *ngIf="i != package.benefits.length - 1">,</span></span
+    >
+  </div>
+  <div class="mt-2" style="font-weight: 500">
+    Expired Date: {{ ownPackage["expDate"] }}
+  </div>
+  <hr />
+  <div class="head">Claim Product</div>
+  <div class="claim-set mb-2">
+    <div *ngFor="let claim of currentClaims; let i = index">
+      <app-claim-item [claim]="claim"></app-claim-item>
+    </div>
+  </div>
+</div>

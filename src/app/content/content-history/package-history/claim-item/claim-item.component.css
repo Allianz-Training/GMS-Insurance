@@ -1,0 +1,19 @@
+.claim-item {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.claim-pic {
+  margin: auto;
+}
+
+.property {
+  font-weight: 700;
+}
+
+#status {
+  color: rgb(0, 155, 0);
+}

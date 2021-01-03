@@ -1,0 +1,57 @@
+.package-item {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background-color: rgb(190, 190, 190);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  min-height: 70vh;
+  grid-gap: 10px;
+}
+
+.pack-a {
+  background-color: rgb(255, 177, 177);
+}
+.pack-b {
+  background-color: rgb(189, 255, 189);
+}
+.pack-c {
+  background-color: rgb(177, 195, 255);
+}
+
+.half {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.half13 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.detail-container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.half-space {
+  grid-gap: 20px;
+}
+
+.right-box {
+  display: flex;
+  height: 100%;
+}
+
+.right-content {
+  width: 100%;
+  /* align-self: center; */
+}
+.package-content {
+  font-size: 20px;
+  text-align: end;
+  margin-bottom: 10px;
+}

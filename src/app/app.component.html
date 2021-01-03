@@ -1,0 +1,19 @@
+<div>
+  <div [ngClass]="checkLogin() ? 'show' : 'hidden'">
+    <app-login></app-login>
+  </div>
+  <div [ngClass]="checkSignUp() ? 'show' : 'hidden'">
+    <app-register></app-register>
+  </div>
+  <app-topbar></app-topbar>
+  <div class="top-space"></div>
+  <div class="side-divider">
+    <div class="side-left">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div>
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </div>
+  <app-footbar></app-footbar>
+</div>

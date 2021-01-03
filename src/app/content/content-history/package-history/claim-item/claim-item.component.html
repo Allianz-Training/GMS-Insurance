@@ -1,0 +1,23 @@
+<div class="claim-item">
+  <div class="claim-pic">
+    <img src="../../../../assets/images/none-icon.png" width="50px" />
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="property mr-1">Name</div>
+      <div class="value">{{ claim["nameProduct"] }}</div>
+    </div>
+    <div class="row">
+      <div class="property mr-1">Price</div>
+      <div class="value">{{ claim["price"] | number: "1.0":"en-US" }}฿</div>
+    </div>
+    <div class="row">
+      <div class="property mr-1">Tracking number</div>
+      <div class="value">{{ claim["trackNumber"] }}</div>
+    </div>
+    <div class="row">
+      <div class="property mr-1">Status</div>
+      <div class="value" id="status">Success</div>
+    </div>
+  </div>
+</div>
